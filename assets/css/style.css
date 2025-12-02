@@ -519,10 +519,10 @@ img {
   width: 90%;
 }
 .skills__css {
-  width: 70%;
+  width: 85%;
 }
 .skills__js {
-  width: 80%;
+  width: 90%;
 }
 .skills__angular {
   width: 90%;
@@ -531,46 +531,46 @@ img {
   width: 80%;
 }
 .skills__netCore{
-  width: 80%;
+  width: 90%;
 }
 .skills__netFramework {
-  width: 75%;
+  width: 90%;
 }
 .skills__node {
-  width: 70%;
+  width: 88%;
 }
 .skills__cSharp {
-  width: 94%;
+  width: 98%;
 }
 .skills__sqlServer {
-  width: 80%;
+  width: 90%;
 }
 .skills__mySql {
-  width: 65%;
-}
-.skills__oracle {
-  width: 45%;
-}
-.skills__azure {
-  width: 70%;
-}
-.skills__aws {
-  width: 50%;
-}
-.skills__fireBase {
   width: 75%;
 }
+.skills__oracle {
+  width: 85%;
+}
+.skills__azure {
+  width: 80%;
+}
+.skills__aws {
+  width: 92%;
+}
+.skills__fireBase {
+  width: 83%;
+}
 .skills__googleCloud{
-  width: 55%;
+  width: 75%;
 }
 .skills__python {
-  width: 25%;
+  width: 80%;
 }
 .skills__react {
-  width: 35%;
+  width: 80%;
 }
 .skills__vue{
-  width: 10%;
+  width: 70%;
 }
 .skills__git {
   width: 95%;
@@ -604,10 +604,10 @@ img {
   width: 80%;
 }
 .skills__jest{
-  width: 75%;
+  width: 85%;
 }
 .skills__figma{
-  width: 60%;
+  width: 80%;
 }
 
 
