@@ -320,3 +320,40 @@ const processCommand = (cmd) => {
     responseLog.innerHTML = response;
     terminalOutput.appendChild(responseLog);
 }
+
+/*==================== PORTFOLIO MODAL ====================*/
+const portModalViews = document.querySelectorAll('.portfolio__modal'),
+    portModalCloses = document.querySelectorAll('.portfolio__modal-close')
+
+// Function to open the correct modal
+let portModal = function (modalClick) {
+    if (portModalViews[modalClick]) {
+        portModalViews[modalClick].classList.add('active-modal')
+    }
+}
+
+// Event delegation for portfolio buttons (handles Swiper duplicated slides)
+document.addEventListener('click', (e) => {
+    let btn = e.target.closest('.portfolio__button');
+    if (btn) {
+        let titleEl = btn.parentElement.querySelector('.portfolio__title');
+        if (titleEl) {
+            let title = titleEl.innerText.trim();
+            if (title === 'Smart Payment' || title.includes('AI Analytics')) {
+                portModal(0);
+            } else if (title === 'Olimpia IT') {
+                portModal(1);
+            } else if (title === 'GuardPay' || title.includes('Cloud')) {
+                portModal(2);
+            }
+        }
+    }
+});
+
+portModalCloses.forEach((modalClose) => {
+    modalClose.addEventListener('click', () => {
+        portModalViews.forEach((modalView) => {
+            modalView.classList.remove('active-modal')
+        })
+    })
+})
