@@ -586,6 +586,36 @@
         </div>
     </footer>
 
+    <!--==================== TERMINAL EASTER EGG ====================-->
+    <!-- Terminal Toggle Button -->
+    <div class="terminal-toggle" id="terminal-toggle" title="Open Terminal (Ctrl + \)">
+        <span style="font-family: 'Consolas', 'Courier New', monospace; font-weight: bold; font-size: 1.2rem;">&gt;_</span>
+    </div>
+
+    <!-- Terminal Modal -->
+    <div class="terminal__overlay" id="terminal-overlay">
+        <div class="terminal__window">
+            <div class="terminal__header">
+                <div class="terminal__buttons">
+                    <span class="terminal__btn terminal__btn--close" id="terminal-close"></span>
+                    <span class="terminal__btn terminal__btn--min"></span>
+                    <span class="terminal__btn terminal__btn--max"></span>
+                </div>
+                <div class="terminal__title">guest@secastrog:~</div>
+            </div>
+            <div class="terminal__body" id="terminal-body">
+                <div class="terminal__output" id="terminal-output">
+                    <p>Welcome to secastrogOS v1.0.0</p>
+                    <p>Type 'help' to see available commands.</p>
+                </div>
+                <div class="terminal__input-line">
+                    <span class="terminal__prompt">guest@secastrog:~$</span>
+                    <input type="text" class="terminal__input" id="terminal-input" autocomplete="off" spellcheck="false" autofocus>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--==================== SCROLL TOP ====================-->
     <a href="#" class="scrollup" id="scroll-up">
         <i class="uil uil-arrow-up scrollup__icon"></i>

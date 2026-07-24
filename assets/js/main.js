@@ -156,3 +156,167 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+/*==================== TERMINAL EASTER EGG ====================*/
+const terminalToggle = document.getElementById('terminal-toggle');
+const terminalOverlay = document.getElementById('terminal-overlay');
+const terminalClose = document.getElementById('terminal-close');
+const terminalInput = document.getElementById('terminal-input');
+const terminalOutput = document.getElementById('terminal-output');
+const terminalBody = document.getElementById('terminal-body');
+
+// Open terminal
+const openTerminal = () => {
+    terminalOverlay.classList.add('show-terminal');
+    setTimeout(() => terminalInput.focus(), 300);
+}
+
+// Close terminal
+const closeTerminal = () => {
+    terminalOverlay.classList.remove('show-terminal');
+    terminalInput.value = '';
+}
+
+// Toggle on button click
+if(terminalToggle) terminalToggle.addEventListener('click', openTerminal);
+if(terminalClose) terminalClose.addEventListener('click', closeTerminal);
+
+// Toggle on keyboard shortcut (Ctrl + \ or ~)
+document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey && e.key === '\\') || e.key === '~') {
+        e.preventDefault();
+        if (terminalOverlay.classList.contains('show-terminal')) {
+            closeTerminal();
+        } else {
+            openTerminal();
+        }
+    }
+});
+
+// Close on overlay click
+if(terminalOverlay) {
+    terminalOverlay.addEventListener('click', (e) => {
+        if (e.target === terminalOverlay) {
+            closeTerminal();
+        }
+    });
+}
+
+// Keep focus on input when clicking inside body
+if(terminalBody) {
+    terminalBody.addEventListener('click', () => {
+        terminalInput.focus();
+    });
+}
+
+// Command execution
+if(terminalInput) {
+    terminalInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const command = terminalInput.value.trim().toLowerCase();
+            
+            // Print the command executed
+            const cmdLog = document.createElement('p');
+            cmdLog.innerHTML = `<span style="color: #00ff00;">guest@secastrog:~$</span> ${command}`;
+            terminalOutput.appendChild(cmdLog);
+            
+            // Process command
+            processCommand(command);
+            
+            // Clear input and scroll to bottom
+            terminalInput.value = '';
+            terminalBody.scrollTop = terminalBody.scrollHeight;
+        }
+    });
+}
+
+const processCommand = (cmd) => {
+    let response = '';
+    const currentLang = localStorage.getItem('language') || 'en';
+    const isEs = currentLang === 'es';
+    
+    const baseCmd = cmd.split(' ')[0];
+    
+    switch (baseCmd) {
+        case 'help':
+            response = isEs 
+                ? 'Comandos disponibles:<br> - whoami: Muestra información sobre mí<br> - get skills: Lista de tecnologías<br> - contact: Información de contacto<br> - goto/cd [sección]: Navegar a home, about, skills, services, portfolio, contact<br> - ls: Listar secciones<br> - pwd: Ruta actual<br> - date: Ver fecha<br> - echo [texto]: Imprimir texto<br> - hire: Contratar<br> - matrix: ???<br> - clear: Limpiar consola<br> - exit: Cerrar terminal'
+                : 'Available commands:<br> - whoami: Displays info about me<br> - get skills: List of technologies<br> - contact: Contact info<br> - goto/cd [section]: Navigate to home, about, skills, services, portfolio, contact<br> - ls: List sections<br> - pwd: Print working directory<br> - date: Show date<br> - echo [text]: Print text<br> - hire: Hire<br> - matrix: ???<br> - clear: Clear console<br> - exit: Close terminal';
+            break;
+        case 'whoami':
+            response = isEs
+                ? 'Soy Sergio Castro, Desarrollador Senior Full-Stack e IA. Construyo arquitecturas en la nube escalables.'
+                : 'I am Sergio Castro, Senior Full-Stack & AI Developer. I build scalable cloud architectures.';
+            break;
+        case 'get':
+            if (cmd === 'get skills') {
+                response = 'C#, .NET Core, Angular, Python, React, Node.js, SQL Server, Oracle, AWS, Azure, Git, Docker';
+            } else {
+                response = `get: missing operand`;
+            }
+            break;
+        case 'contact':
+            response = isEs
+                ? 'Email: <a href="mailto:contact.sergio.dev@gmail.com" style="color:#00ff00;text-decoration:underline;">contact.sergio.dev@gmail.com</a><br>O ejecuta "goto contact"'
+                : 'Email: <a href="mailto:contact.sergio.dev@gmail.com" style="color:#00ff00;text-decoration:underline;">contact.sergio.dev@gmail.com</a><br>Or run "goto contact"';
+            break;
+        case 'goto':
+        case 'cd':
+            const section = cmd.split(' ')[1];
+            if (!section) {
+                response = isEs ? 'Falta el nombre de la sección.' : 'Missing section name.';
+                break;
+            }
+            const el = document.getElementById(section);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+                response = isEs ? `Navegando a ${section}...` : `Navigating to ${section}...`;
+            } else {
+                response = isEs ? `Sección no encontrada: ${section}` : `Section not found: ${section}`;
+            }
+            break;
+        case 'ls':
+        case 'dir':
+            response = '<span style="color:#8b949e">drwxr-xr-x</span> home<br><span style="color:#8b949e">drwxr-xr-x</span> about<br><span style="color:#8b949e">drwxr-xr-x</span> skills<br><span style="color:#8b949e">drwxr-xr-x</span> services<br><span style="color:#8b949e">drwxr-xr-x</span> portfolio<br><span style="color:#8b949e">drwxr-xr-x</span> contact';
+            break;
+        case 'pwd':
+            response = '/home/guest/secastrog_portfolio';
+            break;
+        case 'date':
+            response = new Date().toString();
+            break;
+        case 'echo':
+            response = cmd.substring(5);
+            break;
+        case 'hire':
+            response = isEs
+                ? '¡Excelente elección! Iniciando secuencia de contratación...<br>Por favor contacta a <a href="mailto:contact.sergio.dev@gmail.com" style="color:#00ff00;text-decoration:underline;">contact.sergio.dev@gmail.com</a> para proceder.'
+                : 'Great choice! Initiating hiring sequence...<br>Please reach out to <a href="mailto:contact.sergio.dev@gmail.com" style="color:#00ff00;text-decoration:underline;">contact.sergio.dev@gmail.com</a> to proceed.';
+            break;
+        case 'matrix':
+            response = '<span style="color:#00ff00; font-weight:bold;">Wake up, Neo...</span><br>The Matrix has you.<br>Follow the white rabbit.';
+            break;
+        case 'clear':
+            const welcomeText = isEs 
+                ? "<p>Welcome to secastrogOS v1.0.0</p><p>Escribe 'help' para ver los comandos.</p>" 
+                : "<p>Welcome to secastrogOS v1.0.0</p><p>Type 'help' to see available commands.</p>";
+            terminalOutput.innerHTML = welcomeText;
+            return;
+        case 'exit':
+            closeTerminal();
+            return;
+        case 'sudo':
+        case 'su':
+            response = '<span style="color:#ff5f56;">Access Denied: This incident will be reported.</span>';
+            break;
+        case '':
+            return; // do nothing for empty command
+        default:
+            response = isEs 
+                ? `Comando no encontrado: ${baseCmd}. Escribe 'help' para ver los comandos.`
+                : `Command not found: ${baseCmd}. Type 'help' for available commands.`;
+    }
+    
+    const responseLog = document.createElement('p');
+    responseLog.innerHTML = response;
+    terminalOutput.appendChild(responseLog);
+}
