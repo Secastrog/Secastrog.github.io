@@ -1,4 +1,4 @@
-﻿const translations = {
+const translations = {
     en: {
         nav_home: "Home",
         nav_services: "Services",
@@ -404,7 +404,7 @@
         qual_cert4: "C# Curso desde cero para ser programador .NET",
         qual_cert5: "React - Guía definitiva: hooks, redux, next",
 
-        testi_title: "Casos de Ã‰xito",
+        testi_title: "Casos de Éxito",
         testi_subtitle: "Lo que los profesionales opinan de mi trabajo",
         testi_desc1: "\"Sergio reestructuró toda nuestra arquitectura en la nube e integró flujos de trabajo con IA que nos ahorraron meses de desarrollo. Su visión de escalabilidad es inigualable.\"",
         testi_name1: "Manager de Arquitectura Cloud",
