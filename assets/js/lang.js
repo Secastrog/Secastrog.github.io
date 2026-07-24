@@ -11,6 +11,7 @@ const translations = {
         hero_desc: "I am Sergio Castro. A Senior Full-Stack & AI Developer designing highly available, secure cloud architectures and AI-driven systems that empower businesses to scale efficiently.",
         hero_btn1: "Start a Project <i class=\"uil uil-arrow-right\"></i>",
         hero_btn2: "View Portfolio",
+        hero_btn3: "<i class=\"uil uil-github-alt\"></i> Enterprise Repositories",
         hero_badge1: "<i class=\"uil uil-cloud-check\"></i> Azure/AWS Trained",
         hero_badge2: "<i class=\"uil uil-brain\"></i> AI Integrator",
 
@@ -221,6 +222,7 @@ const translations = {
         hero_desc: "Soy Sergio Castro. Desarrollador Senior Full-Stack e IA diseÃ±ando arquitecturas en la nube seguras y de alta disponibilidad, asÃ­ como sistemas impulsados por IA que permiten a las empresas escalar eficientemente.",
         hero_btn1: "Iniciar un Proyecto <i class=\"uil uil-arrow-right\"></i>",
         hero_btn2: "Ver Portafolio",
+        hero_btn3: "<i class=\"uil uil-github-alt\"></i> Repositorios Enterprise",
         hero_badge1: "<i class=\"uil uil-cloud-check\"></i> FormaciÃ³n Azure/AWS",
         hero_badge2: "<i class=\"uil uil-brain\"></i> Integrador de IA",
 
