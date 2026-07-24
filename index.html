@@ -89,6 +89,8 @@
     <main class="main">
         <!--==================== HERO ====================-->
         <section class="hero section" id="home">
+            <!-- Particle Background Container -->
+            <div id="tsparticles"></div>
             <div class="hero__bg-glow"></div>
             <div class="hero__container container grid">
                 <div class="hero__content">
@@ -159,6 +161,42 @@
             </div>
         </section>
 
+        <!--==================== WORKFLOW / PROCESS ====================-->
+        <section class="process section" id="process">
+            <h2 class="section__title text-center" data-i18n="process_title">How I Work</h2>
+            <span class="section__subtitle text-center" data-i18n="process_subtitle">A proven methodology for enterprise delivery</span>
+
+            <div class="process__container container grid">
+                <!-- Step 1 -->
+                <div class="process__card glass-card">
+                    <span class="process__number">01</span>
+                    <h3 class="process__title" data-i18n="process_step1_title">Discovery & AI Fit</h3>
+                    <p class="process__description" data-i18n="process_step1_desc">Deep dive into business logic to identify opportunities where AI and automation can exponentially improve workflows.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="process__card glass-card">
+                    <span class="process__number">02</span>
+                    <h3 class="process__title" data-i18n="process_step2_title">Cloud Architecture</h3>
+                    <p class="process__description" data-i18n="process_step2_desc">Designing scalable, secure cloud-native systems (Azure/AWS) ensuring a robust foundation before writing code.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process__card glass-card">
+                    <span class="process__number">03</span>
+                    <h3 class="process__title" data-i18n="process_step3_title">Agile Development</h3>
+                    <p class="process__description" data-i18n="process_step3_desc">Iterative engineering in Scrum Sprints, prioritizing clean code, test-driven paradigms, and continuous stakeholder alignment.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="process__card glass-card">
+                    <span class="process__number">04</span>
+                    <h3 class="process__title" data-i18n="process_step4_title">CI/CD & Support</h3>
+                    <p class="process__description" data-i18n="process_step4_desc">Automated deployment pipelines and proactive monitoring, ensuring your enterprise software remains stable and highly available.</p>
+                </div>
+            </div>
+        </section>
+
         <!--==================== ABOUT / METRICS ====================-->
         <!--==================== ABOUT / METRICS ====================-->
         <section class="about section" id="about">
@@ -210,6 +248,99 @@
             </div>
         </section>
 
+        <!--==================== QUALIFICATION ====================-->
+        <section class="qualification section" id="qualification">
+            <h2 class="section__title text-center" data-i18n="qual_title">Career Path</h2>
+            <span class="section__subtitle text-center" data-i18n="qual_subtitle">My personal journey</span>
+
+            <div class="qualification__container container">
+                <div class="qualification__sections grid">
+                    
+                    <!-- EXPERIENCE -->
+                    <div class="qualification__content glass-card">
+                        <h3 class="qualification__title"><i class="uil uil-briefcase-alt"></i> <span data-i18n="qual_exp_title">Professional Experience</span></h3>
+                        
+                        <div class="qualification__box">
+                            <!-- Freelance -->
+                            <div class="qualification__data">
+                                <div class="qualification__line"></div>
+                                <div>
+                                    <h3 class="qualification__area" data-i18n="qual_job3">Freelance Software & AI Developer</h3>
+                                    <span class="qualification__company" data-i18n="qual_comp3">Self-Employed</span>
+                                    <p class="qualification__description mt-1" data-i18n="qual_desc3">Developed full platforms, modernized websites, and introduced Scrum structures.</p>
+                                    <div class="qualification__calendar mt-1">
+                                        <i class="uil uil-calendar-alt"></i> <span data-i18n="qual_date3_exp">Jan 2019 - Present</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Olimpia -->
+                            <div class="qualification__data mt-2">
+                                <div class="qualification__line"></div>
+                                <div>
+                                    <h3 class="qualification__area" data-i18n="qual_job1">Software Development</h3>
+                                    <span class="qualification__company" data-i18n="qual_comp1">OlimpIA IT</span>
+                                    <p class="qualification__description mt-1" data-i18n="qual_desc1">Specialized training in Artificial Intelligence and the architecture of autonomous AI agents. Led enterprise software implementations.</p>
+                                    <div class="qualification__calendar mt-1">
+                                        <i class="uil uil-calendar-alt"></i> <span data-i18n="qual_date1">Aug 2022 - Nov 2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Smart Payment -->
+                            <div class="qualification__data mt-2">
+                                <div class="qualification__line"></div>
+                                <div>
+                                    <h3 class="qualification__area" data-i18n="qual_job2">Lead Software Developer</h3>
+                                    <span class="qualification__company" data-i18n="qual_comp2">Smart Payment</span>
+                                    <p class="qualification__description mt-1" data-i18n="qual_desc2">Guided a team of 5 developers in building an online payment platform. Defined architecture, modernized UI/UX, and implemented AI-powered chatbots.</p>
+                                    <div class="qualification__calendar mt-1">
+                                        <i class="uil uil-calendar-alt"></i> <span data-i18n="qual_date2">Mar 2021 - Aug 2022</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EDUCATION -->
+                    <div class="qualification__content glass-card">
+                        <h3 class="qualification__title"><i class="uil uil-graduation-cap"></i> <span data-i18n="qual_edu_title">Education & Certifications</span></h3>
+                        
+                        <div class="qualification__box">
+                            <!-- University -->
+                            <div class="qualification__data">
+                                <div class="qualification__line"></div>
+                                <div>
+                                    <h3 class="qualification__area" data-i18n="qual_deg1">Software Engineering</h3>
+                                    <span class="qualification__company" data-i18n="qual_uni1">Politécnico Grancolombiano (7th / 8th Semester)</span>
+                                    <div class="qualification__calendar mt-1">
+                                        <i class="uil uil-calendar-alt"></i> <span data-i18n="qual_date_edu">2021 - Present</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Certifications -->
+                            <div class="qualification__data mt-2">
+                                <div class="qualification__line"></div>
+                                <div>
+                                    <h3 class="qualification__area" data-i18n="qual_cert_title">Advanced Tech Certifications</h3>
+                                    <span class="qualification__company" data-i18n="qual_cert_subtitle">Udemy (100% Completed)</span>
+                                    <ul class="qualification__list mt-1">
+                                        <li><i class="uil uil-award"></i> <span data-i18n="qual_cert1">Angular: From Zero to Expert</span></li>
+                                        <li><i class="uil uil-award"></i> <span data-i18n="qual_cert2">React: The Definitive Guide</span></li>
+                                        <li><i class="uil uil-award"></i> <span data-i18n="qual_cert3">Python TOTAL with AI Integration</span></li>
+                                        <li><i class="uil uil-award"></i> <span data-i18n="qual_cert4">C# & .NET Core Developer</span></li>
+                                        <li><i class="uil uil-award"></i> <span data-i18n="qual_cert5">Fullstack JS, Node.js, CSS Grid & SASS</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <!--==================== PERSONAL PROFILE ====================-->
         <section class="personal section" id="personal">
             <div class="personal__container container">
@@ -234,6 +365,43 @@
                                 Let's Connect <i class="uil uil-linkedin-alt"></i>
                             </a>
                         </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== TESTIMONIALS ====================-->
+        <section class="testimonial section" id="testimonials">
+            <h2 class="section__title text-center" data-i18n="testi_title">Client Success</h2>
+            <span class="section__subtitle text-center" data-i18n="testi_subtitle">What professionals say about my work</span>
+
+            <div class="testimonial__container container grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial__card glass-card">
+                    <i class="uil uil-comment-alt-notes testimonial__icon"></i>
+                    <p class="testimonial__description" data-i18n="testi_desc1">"Sergio restructured our entire cloud architecture and integrated AI-driven workflows that saved us months of development time. His vision for enterprise scalability is unmatched."</p>
+                    <div class="testimonial__info">
+                        <h3 class="testimonial__name" data-i18n="testi_name1">Cloud Architecture Manager</h3>
+                        <span class="testimonial__client" data-i18n="testi_role1">Enterprise Tech Company</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial__card glass-card">
+                    <i class="uil uil-comment-alt-notes testimonial__icon"></i>
+                    <p class="testimonial__description" data-i18n="testi_desc2">"An exceptional developer and leader. He guided our team through a critical online payment project, delivering clean, secure code under rigorous corporate standards."</p>
+                    <div class="testimonial__info">
+                        <h3 class="testimonial__name" data-i18n="testi_name2">Technical Lead</h3>
+                        <span class="testimonial__client" data-i18n="testi_role2">Financial Sector</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial__card glass-card">
+                    <i class="uil uil-comment-alt-notes testimonial__icon"></i>
+                    <p class="testimonial__description" data-i18n="testi_desc3">"His ability to translate complex business requirements into fast, reliable software is incredible. Working with him in Scrum environments guarantees rapid and successful delivery."</p>
+                    <div class="testimonial__info">
+                        <h3 class="testimonial__name" data-i18n="testi_name3">Product Owner / Cell Lead</h3>
+                        <span class="testimonial__client" data-i18n="testi_role3">Agile Software Agency</span>
                     </div>
                 </div>
             </div>
@@ -429,5 +597,9 @@
     <!--==================== MAIN JS ====================-->
     <script src="assets/js/lang.js"></script>
     <script src="assets/js/main.js"></script>
+    <!-- tsParticles Interactive Background -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script src="assets/js/particles-config.js"></script>
+
 </body>
 </html>

@@ -1,3 +1,89 @@
+/*==================== QUALIFICATION ====================*/
+.qualification__sections {
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+}
+
+.qualification__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-2);
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  color: var(--primary-color);
+}
+
+.qualification__title i {
+  font-size: 1.5rem;
+}
+
+.qualification__box {
+  border-left: 2px solid var(--border-color);
+  padding-left: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.qualification__data {
+  position: relative;
+}
+
+.qualification__line {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  left: -1.95rem;
+  top: 0.2rem;
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.4);
+}
+
+.qualification__area {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: var(--mb-0-25);
+  color: var(--title-color);
+}
+
+.qualification__company {
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+}
+
+.qualification__description {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
+
+.qualification__calendar {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
+}
+
+.qualification__list {
+  list-style: none;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.qualification__list i {
+  color: var(--secondary-color);
+  margin-right: 0.25rem;
+}
+
+@media screen and (min-width: 768px) {
+  .qualification__sections {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+}
+
 /*==================== GOOGLE FONTS ====================*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap');
 
@@ -376,6 +462,23 @@ img {
   display: flex;
   align-items: center;
   padding-top: var(--header-height);
+  overflow: hidden; /* Ensures particles don't spill out */
+}
+
+#tsparticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero__container {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: 1fr;
+  align-items: center;
 }
 
 .hero__bg-glow {
@@ -388,11 +491,6 @@ img {
   background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, rgba(9, 9, 11, 0) 70%);
   z-index: -1;
   pointer-events: none;
-}
-
-.hero__container {
-  grid-template-columns: 1fr;
-  align-items: center;
 }
 
 .hero__subtitle {
@@ -605,7 +703,7 @@ img {
 .personal__img-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to top, var(--container-color) 0%, rgba(9,9,11,0) 100%);
+  background: linear-gradient(to top, var(--container-color) 0%, transparent 100%);
 }
 
 .personal__data {
@@ -861,6 +959,101 @@ img {
   box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2);
 }
 
+/*==================== WORKFLOW / PROCESS ====================*/
+.process__container {
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+}
+
+.process__card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2.5rem;
+}
+
+.process__number {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 6rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  opacity: 0.1;
+  line-height: 1;
+  z-index: 0;
+}
+
+.process__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-1);
+  color: var(--title-color);
+  z-index: 1;
+}
+
+.process__description {
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  z-index: 1;
+}
+
+@media screen and (min-width: 568px) {
+  .process__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 968px) {
+  .process__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/*==================== TESTIMONIAL ====================*/
+.testimonial__container {
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+}
+
+.testimonial__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.testimonial__icon {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: var(--mb-1);
+}
+
+.testimonial__description {
+  font-style: italic;
+  margin-bottom: var(--mb-1-5);
+  color: var(--text-color);
+}
+
+.testimonial__name {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  margin-bottom: var(--mb-0-25);
+}
+
+.testimonial__client {
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+@media screen and (min-width: 768px) {
+  .testimonial__container {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+  }
+}
+
 /*==================== FOOTER ====================*/
 .footer {
   background: var(--container-color);
@@ -977,6 +1170,11 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
   
+  .contact__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+  
   .skills__grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -1041,42 +1239,41 @@ img {
 
   .about__container {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 3rem;
   }
   
   .about__content {
     grid-template-columns: repeat(2, 1fr);
-    align-items: flex-start;
-    column-gap: 4rem;
-  }
-  
-  .about__text {
-    margin-top: 0.5rem;
-  }
-
-  .about__metrics {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  
-  .personal__card {
-    grid-template-columns: 1fr 1.5fr;
-  }
-  
-  .personal__img-wrapper {
-    height: 100%;
-  }
-
-  .personal__img-overlay {
-    background: linear-gradient(to right, rgba(9,9,11,0) 0%, var(--container-color) 100%);
-  }
-  
-  .personal__data {
-    padding: 4rem;
+    align-items: start;
+    gap: 3rem;
   }
   
   .contact__container {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
+  }
+  
+  .about__metrics {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .personal__card {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .personal__img-wrapper {
+    height: 100%;
+  }
+
+  .personal__img-overlay {
+    background: linear-gradient(to right, transparent 0%, var(--container-color) 100%);
+  }
+
+  .personal__data {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
   .skills__grid {
