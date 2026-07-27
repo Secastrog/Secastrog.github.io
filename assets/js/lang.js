@@ -394,7 +394,7 @@ const translations = {
         qual_date2: "Mar 2021 - Ago 2022",
         qual_edu_title: "Educación y Certificaciones",
         qual_deg1: "Ingeniería de Software",
-        qual_uni1: "Politécnico Grancolombiano (7Âº / 8Âº Semestre)",
+        qual_uni1: "Politécnico Grancolombiano (7º / 8º Semestre)",
         qual_date_edu: "2021 - Presente",
         qual_cert_title: "Certificaciones Tecnológicas Avanzadas",
         qual_cert_subtitle: "Udemy (100% Completado)",

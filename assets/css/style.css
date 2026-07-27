@@ -781,6 +781,10 @@ img {
   object-fit: contain;
 }
 
+.skill__box img[src*="netcore"] {
+  transform: scale(1.8);
+}
+
 .skill__box span {
   font-size: var(--small-font-size);
   font-weight: var(--font-medium);
