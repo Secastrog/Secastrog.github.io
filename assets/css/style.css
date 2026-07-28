@@ -618,7 +618,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto var(--mb-1-5);
+  margin-bottom: var(--mb-1-5);
   font-size: 2rem;
   color: var(--primary-color);
 }
