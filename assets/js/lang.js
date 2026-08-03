@@ -52,8 +52,8 @@ const translations = {
         about_phil4_t: "Rapid iteration with uncompromising code quality.",
         about_metric1: "Years of<br>Experience",
         about_metric2: "Enterprise<br>Projects",
-        about_metric3: "Client<br>Satisfaction",
-        about_metric4: "Technical<br>Support",
+        about_metric3: "Technologies",
+        about_metric4: "Countries",
 
         personal_title: "Behind the Code",
         personal_subtitle: "The Human Element of Technology",
@@ -263,8 +263,8 @@ const translations = {
         about_phil4_t: "Iteración rápida con calidad de código intransigente.",
         about_metric1: "Años de<br>Experiencia",
         about_metric2: "Proyectos<br>Corporativos",
-        about_metric3: "Satisfacción<br>del Cliente",
-        about_metric4: "Soporte<br>Técnico",
+        about_metric3: "Tecnologías",
+        about_metric4: "Países",
 
         personal_title: "Detrás del Código",
         personal_subtitle: "El Elemento Humano de la Tecnología",
